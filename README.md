@@ -1,33 +1,11 @@
 ## Mobilenet-SSD：轻量级目标检测模型在Keras当中的实现（论文版）
----
 
-## 嘟嘟嘟为什么要再弄一个版本的Mobilenet-SSD
-之前实现了一个版本的mobilenet-SSD，有小伙伴告诉我说这个不是原版的Mobilenet-ssd的结构，然后我去网上查了一下，好像还真不是，原版的Mobilenet-ssd不利用38x38的特征层进行回归预测和分类预测，因此我就制作了这个版本，填一下坑。
-
-## 目录
-1. [性能情况 Performance](#性能情况)
-2. [所需环境 Environment](#所需环境)
-3. [文件下载 Download](#文件下载)
-4. [预测步骤 How2predict](#预测步骤)
-5. [训练步骤 How2train](#训练步骤)
-6. [参考资料 Reference](#Reference)
-
-## 性能情况
-| 训练数据集 | 权值文件名称 | 测试数据集 | 输入图片大小 | mAP 0.5:0.95 | mAP 0.5 |
-| :-----: | :-----: | :------: | :------: | :------: | :-----: |
-| VOC07+12 | [essay_mobilenet_ssd_weights.h5](https://github.com/bubbliiiing/Mobilenet-SSD-Essay/releases/download/v1.0/essay_mobilenet_ssd_weights.h5) | VOC-Test07 | 300x300| - | 69.28 |
-
-我参考了如下两个库：  
-https://github.com/FreeApe/VGG-or-MobileNet-SSD  
-https://github.com/chuanqi305/MobileNet-SSD  
-在没有coco预训练权重的时候，SSD使用VOC07+12训练后，在VOC-Test07的mAP为69.28是正常的，论文中实现的72.7是有使用coco预训练权重的。
-
-## 所需环境
+## 主环境
 tensorflow-gpu==1.13.1  
 keras==2.1.5  
 
 ## 文件下载
-训练所需的essay_mobilenet_ssd_weights可以在百度云下载。  
+训练所需的essay_mobilenet_ssd_weights可以在百度云下载。[放入model_data]  
 链接: https://pan.baidu.com/s/1HwCLIqNeq2fvZsZzbPHF_w   
 提取码: 839n  
 
@@ -80,6 +58,10 @@ get_map文件克隆自https://github.com/Cartucho/mAP
 具体mAP计算过程可参考：https://www.bilibili.com/video/BV1zE411u7Vw
 
 ## Reference
+https://github.com/bubbliiiing/Mobilenet-SSD-Essay
 https://github.com/pierluigiferrari/ssd_keras  
 https://github.com/kuhung/SSD_keras  
 https://github.com/ruinmessi/RFBNet
+https://github.com/FreeApe/VGG-or-MobileNet-SSD  
+https://github.com/chuanqi305/MobileNet-SSD  
+
